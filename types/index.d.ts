@@ -47,6 +47,16 @@ interface InterviewCardProps {
   createdAt?: string;
 }
 
+// type InterviewCardProps = {
+//   id: string;
+//   role: string;
+//   type: string;
+//   createdAt: string;
+//   techstack: string[];
+//   createdBy: string;       // The user who created the interview
+//   respondentId?: string;   // The user who took the interview (optional)
+// };
+
 interface AgentProps {
   userName?: string;
   userId?: string;

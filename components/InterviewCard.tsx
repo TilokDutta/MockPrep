@@ -7,6 +7,7 @@ import Link from 'next/link'
 import DisplayTechIcons from './DisplayTechIcons'
 import { getFeedbackByInterviewId } from '@/lib/actions/general.action'
 
+
 const Interview = async ({id,userId,role,type,createdAt,techstack}:InterviewCardProps) => {
   const normalizedType = /mix/gi.test(type)?"Mixed":type
   const feedback = userId && id ? await getFeedbackByInterviewId({interviewId:id,userId}):null;

@@ -162,7 +162,7 @@ const Agent = ({userName, userId,type,interviewId, questions}:AgentProps) => {
                 </button>
             ) : (
                 <button className="btn-disconnect" onClick={handleDisconnect}>
-                    End
+                    Leave Interview
                 </button>
             )}
         </div>

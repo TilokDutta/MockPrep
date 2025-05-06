@@ -5,10 +5,11 @@ import React from 'react'
 import { Button } from './ui/button'
 import Link from 'next/link'
 import DisplayTechIcons from './DisplayTechIcons'
+import { getFeedbackByInterviewId } from '@/lib/actions/general.action'
 
-const Interview = ({id,userId,role,type,createdAt,techstack}:InterviewCardProps) => {
+const Interview = async ({id,userId,role,type,createdAt,techstack}:InterviewCardProps) => {
   const normalizedType = /mix/gi.test(type)?"Mixed":type
-  const feedback = null as Feedback | null // not same as sir said
+  const feedback = userId && id ? await getFeedbackByInterviewId({interviewId:id,userId}):null;
   const formatedDate = dayjs(feedback?.createdAt || createdAt || Date.now()).format('MMM D, YYYY')
   return (
     <div className="card-border w-[360px] max-sm:w-full min-h-96">
